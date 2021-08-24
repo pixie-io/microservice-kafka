@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-test
+  labels:
+    name: load-test
+spec:
+  selector:
+    matchLabels:
+      name: load-test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: load-test
+    spec:
+      containers:
+      - name: load-test
+        image: gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:3.0
+        command: ["locust"]
+        # This runs locust in batch mode.
+        # The following form runs locust in web mode.
+        # locust --host http://front-end.sock-shop.svc.cluster.local -f /config/locustfile.py
+        args: ["-u", "1", "-r", "1", "--headless", "-f", "/config/locustfile.py",
+               "--host", "http://10.48.0.96:8080"]
