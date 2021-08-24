@@ -1,7 +1,7 @@
 import base64
 import json
 
-from locust import HttpUser, TaskSet, task
+from locust import HttpUser, TaskSet, task, constant
 from random import randint, choice
 
 class WebTasks(TaskSet):
@@ -28,5 +28,5 @@ class WebTasks(TaskSet):
 class Web(HttpUser):
 
     tasks = [WebTasks]
-    min_wait = 5000
-    max_wait = 5000
+    # wait 1 second
+    wait_time = constant(1)
