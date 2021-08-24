@@ -18,5 +18,19 @@ spec:
       - name: load-test
         image: gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:3.0
         command: ["locust"]
-        args: ["-u", "1", "-r", "1", "--headless", "-f", "/config/locustfile.py",
+        args: ["-u", "1", "-r", "1", "-f", "/config/locustfile.py",
                "--host", "http://apache:8080"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: load-test
+  name: load-test
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8089
+  selector:
+    name: load-test
