@@ -25,6 +25,11 @@ public class OrderKafkaListener {
 	public void order(Invoice invoice, Acknowledgment acknowledgment) {
 		log.info("Received invoice " + invoice.getId());
 		invoiceService.generateInvoice(invoice);
+                try {
+                    Thread.sleep(2000);
+                } catch(InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
 		acknowledgment.acknowledge();
 	}
 

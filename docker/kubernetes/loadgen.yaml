@@ -17,6 +17,7 @@ spec:
       containers:
       - name: load-test
         image: gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:4.0
+        imagePullPolicy: Always
         command: ["locust"]
         args: ["-u", "1", "-r", "1", "-f", "/config/locustfile.py",
                "--host", "http://apache:8080"]
@@ -24,6 +25,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    cloud.google.com/load-balancer-type: "internal"
   labels:
     name: load-test
   name: load-test

@@ -1,7 +1,7 @@
 To run the demo:
 
 ```
-kubectl apply -f loadgen.yaml -n=kafka-demo
+kubectl apply -f . -n=kafka-demo
 kubectl get services -n kafka-demo
 ```
 
