@@ -19,4 +19,4 @@ spec:
         image: gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:3.0
         command: ["locust"]
         args: ["-u", "1", "-r", "1", "--headless", "-f", "/config/locustfile.py",
-               "--host", "http://apache.default.svc.cluster.local:8080"]
+               "--host", "http://apache:8080"]
