@@ -12,7 +12,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "order:5:1"
   apache:
-    build: apache
+    build: ../src/apache
     links:
      - order
      - shipping
@@ -20,29 +20,33 @@ services:
     ports:
      - "8080:80"
   postgres:
-    build: postgres
+    build: ../src/postgres
     environment:
       POSTGRES_PASSWORD: dbpass
       POSTGRES_USER: dbuser
   order:
-    build: ../microservice-kafka/microservice-kafka-order
+    build: ../src/microservice-kafka-order
     links:
      - kafka
      - postgres
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
   shipping:
-    build: ../microservice-kafka/microservice-kafka-shipping
+    build: ../src/microservice-kafka-shipping
     links:
      - kafka
      - postgres
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
   invoicing:
-    build: ../microservice-kafka/microservice-kafka-invoicing
+    build: ../src/microservice-kafka-invoicing
     links:
      - kafka
      - postgres
     environment:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  load-test:
+    build: ../src/microservice-kafka-load-test
+    links:
+     - apache
 
