@@ -51,12 +51,15 @@ docker push gcr.io/pl-dev-infra/demos/microservice-kafka/postgres:1.0
 To run the demo app:
 
 ```
+kubectl create namespace kafka-demo
 cd kubernetes
 kubectl apply -f . -n kafka-demo
 kubectl get services -n kafka-demo
 cd ..
 ```
 
-Visit the apache external IP to visit the site.
-Visit the load-test's external IP to start a load test.
+It may take a few minutes for the demo to fully spin up, and some pod restarts along the way are normal.
+
+Visit the apache external IP (with port) to visit the site.
+Visit the load-test's external IP (with port) to start a load test.
 
