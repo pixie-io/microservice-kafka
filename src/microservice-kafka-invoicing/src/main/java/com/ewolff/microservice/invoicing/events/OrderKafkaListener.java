@@ -26,7 +26,7 @@ public class OrderKafkaListener {
 		log.info("Received invoice " + invoice.getId());
 		invoiceService.generateInvoice(invoice);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1100);
                 } catch(InterruptedException ex) {
                     Thread.currentThread().interrupt();
                 }

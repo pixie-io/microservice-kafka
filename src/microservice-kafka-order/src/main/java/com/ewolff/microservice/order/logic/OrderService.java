@@ -31,7 +31,7 @@ public class OrderService {
 	}
 
 	private void fireOrderCreatedEvent(Order order) {
-		kafkaTemplate.send("order", order.getId() + "created", order);
+		kafkaTemplate.send("order", (int)order.getId() % 5, order.getId() + "created", order);
 	}
 
 	public double getPrice(long orderId) {

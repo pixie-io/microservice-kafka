@@ -10,7 +10,7 @@ class WebTasks(TaskSet):
     def load(self):
 
         order = {
-        'customer': '5',
+        'customer': '1',
         'shippingAddress.street': '333 Test St',
         'shippingAddress.zip': '94105',
         'shippingAddress.city': 'San Francisco',
@@ -18,7 +18,7 @@ class WebTasks(TaskSet):
         'billingAddress.zip': '94105',
         'billingAddress.city': 'San Francisco',
         'orderLine[0].count': '1',
-        'orderLine[0].item': '1',
+        'orderLine[0].item': '3',
         'submit': ''
         }
 
