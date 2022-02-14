@@ -19,7 +19,7 @@ docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/invoicing:1.0 .
 cd ../..
 
 cd src/microservice-kafka-load-test
-docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:4.0 .
+docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:1.0 .
 cd ../..
 
 cd src/microservice-kafka-order
@@ -27,11 +27,11 @@ docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/order:1.0 .
 cd ../..
 
 cd src/microservice-kafka-shipping
-docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/shipping .
+docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/shipping:1.0 .
 cd ../..
 
 cd src/postgres
-docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/postgres .
+docker build -t gcr.io/pl-dev-infra/demos/microservice-kafka/postgres:1.0 .
 cd ../..
 ```
 
@@ -40,7 +40,7 @@ cd ../..
 ```
 docker push gcr.io/pl-dev-infra/demos/microservice-kafka/apache:1.0
 docker push gcr.io/pl-dev-infra/demos/microservice-kafka/invoicing:1.0
-docker push gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:4.0
+docker push gcr.io/pl-dev-infra/demos/microservice-kafka/load-test:1.0
 docker push gcr.io/pl-dev-infra/demos/microservice-kafka/order:1.0
 docker push gcr.io/pl-dev-infra/demos/microservice-kafka/shipping:1.0
 docker push gcr.io/pl-dev-infra/demos/microservice-kafka/postgres:1.0
