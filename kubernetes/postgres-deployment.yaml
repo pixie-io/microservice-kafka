@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: postgres
   name: postgres
+  namespace: px-kafka
 spec:
   replicas: 1
   selector:
@@ -41,6 +42,7 @@ metadata:
   name: postgres
   labels:
     io.kompose.service: postgres
+  namespace: px-kafka
 spec:
   ports:
     - name: client

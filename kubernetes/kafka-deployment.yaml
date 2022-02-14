@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: kafka
   name: kafka
+  namespace: px-kafka
 spec:
   replicas: 1
   selector:
@@ -50,6 +51,7 @@ metadata:
   name: kafka-service
   labels:
     io.kompose.service: kafka
+  namespace: px-kafka
 spec:
   ports:
     - name: kafka

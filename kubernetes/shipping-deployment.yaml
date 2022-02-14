@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: shipping
   name: shipping
+  namespace: px-kafka
 spec:
   replicas: 1
   selector:
@@ -39,6 +40,7 @@ metadata:
   name: shipping
   labels:
     io.kompose.service: shipping
+  namespace: px-kafka
 spec:
   ports:
     - name: client

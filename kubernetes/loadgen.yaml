@@ -4,6 +4,7 @@ metadata:
   name: load-test
   labels:
     name: load-test
+  namespace: px-kafka
 spec:
   selector:
     matchLabels:
@@ -30,6 +31,7 @@ metadata:
   labels:
     name: load-test
   name: load-test
+  namespace: px-kafka
 spec:
   type: LoadBalancer
   ports:
