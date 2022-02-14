@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: zookeeper
   name: zookeeper
+  namespace: px-kafka
 spec:
   replicas: 1
   selector:
@@ -26,7 +27,7 @@ spec:
       containers:
         - image: wurstmeister/zookeeper:3.4.6
           name: zookeeper
-          ports: 
+          ports:
             - containerPort: 2181
               protocol: TCP
           env:
@@ -42,6 +43,7 @@ metadata:
   name: zookeeper
   labels:
     io.kompose.service: zookeeper
+  namespace: px-kafka
 spec:
   ports:
     - name: client

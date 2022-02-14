@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: invoicing
   name: invoicing
+  namespace: px-kafka
 spec:
   replicas: 1
   selector:
@@ -40,6 +41,7 @@ metadata:
   name: invoicing
   labels:
     io.kompose.service: invoicing
+  namespace: px-kafka
 spec:
   ports:
     - name: client

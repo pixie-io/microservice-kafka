@@ -63,3 +63,12 @@ It may take a few minutes for the demo to fully spin up, and some pod restarts a
 Visit the apache external IP (with port) to visit the site.
 Visit the load-test's external IP (with port) to start a load test.
 
+# Update `px demos` yaml file
+
+1. Build a single yaml file for the demo:
+
+```
+kustomize build . >  kafka.yaml
+```
+
+2. Copy the yaml file to `pixie/demos/kafka`.
