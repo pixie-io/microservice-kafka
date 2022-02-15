@@ -32,6 +32,10 @@ spec:
           name: order
           resources: {}
       restartPolicy: Always
+      initContainers:
+      - name: wait-order
+        image: alpine:3.6
+        command: ['sh', '-c', 'sleep 10']
 status: {}
 ---
 apiVersion: v1
