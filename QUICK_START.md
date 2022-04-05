@@ -51,10 +51,10 @@ docker push gcr.io/pl-dev-infra/demos/microservice-kafka/postgres:1.0
 To run the demo app:
 
 ```
-kubectl create namespace kafka-demo
+kubectl create namespace px-kafka
 cd kubernetes
-kubectl apply -f . -n kafka-demo
-kubectl get services -n kafka-demo
+kubectl apply -f . -n px-kafka
+kubectl get services -n px-kafka
 cd ..
 ```
 
