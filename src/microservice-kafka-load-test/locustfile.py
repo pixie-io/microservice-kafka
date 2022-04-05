@@ -10,7 +10,9 @@ class WebTasks(TaskSet):
     def load(self):
 
         order = {
-        'customer': '1',
+        # 'customer.name': 'John Doe',
+        # 'customer.firstname': 'John',
+        # 'customer.email': 'johndoe@email.com',
         'shippingAddress.street': '333 Test St',
         'shippingAddress.zip': '94105',
         'shippingAddress.city': 'San Francisco',
