@@ -30,7 +30,7 @@ public class Order {
 	@Id
 	@GeneratedValue
 	private long id;
-
+		
 	@ManyToOne
 	private Customer customer;
 
